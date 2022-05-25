@@ -26,7 +26,7 @@ const Button = styled.button`
   border-radius: 4px;
   border: none;
   padding: 12px 32px;
-  background-color: ${(props) => (props.favorite ? "yellow" : "purple")};
+  background-color: ${({favorite}) => (favorite ? "yellow" : "purple")};
   color: ${(props) => (props.favorite ? "black" : "white")};
   cursor: pointer;
 `;
@@ -36,13 +36,13 @@ const Banner = () => {
     <Div>
       <H1>Rick and Morty</H1>
       <P>
-        Rick and Morty (em português Rick e Morty) é uma série de animação
-        adulta norte-americana de comédia e ficção científica criada por Justin
-        Roiland e Dan Harmon para o bloco de programação noturno Adult Swim,
-        exibido no canal Cartoon Network.
+          Rick and Morty es una serie animada para adultos de ciencia
+          ficción y comedia estadounidense creada por Justin Roiland y
+          Dan Harmon para el bloque de programación nocturna Adult Swim,
+          transmitido en el canal Cartoon Network.
       </P>
-      <Button>Assistir Trailer</Button>
-      <Button favorite>Salvar no favoritos</Button>
+      <Button>Ver el trailer</Button>
+      <Button favorite>Guardar en favoritos</Button>
     </Div>
   );
 };

@@ -30,7 +30,7 @@ const H2 = styled.h2`
 const H3 = styled.h3`
   font-size: 24px;
   color: blue;
-  ${({ id }) => id === "Female" && "color: red;"}
+  ${({ gender }) => gender === "Female" && "color: red;"}
 `;
 
 interface CharacterProps {
@@ -41,7 +41,7 @@ interface CharacterProps {
 }
 
 const Character = () => {
-  const [character, setCharacter] = useState([]);
+  const [character, setCharacter] = useState<CharacterProps>([]);
 
   useEffect(() => {
     const fetchCharacter = () =>
@@ -55,7 +55,7 @@ const Character = () => {
 
   return (
     <>
-      <H2>Alguns personagens da série</H2>
+      <H2>Algunos personajes de la serie</H2>
       <Section>
         {character.map((data: CharacterProps) => {
           return (
@@ -63,7 +63,7 @@ const Character = () => {
               <Image src={data.image} alt={data.name} />
 
               <H2>{data.name}</H2>
-              <H3 id={data.gender}>{data.gender}</H3>
+              <H3 gender={data.gender}>{data.gender}</H3>
             </Article>
           );
         })}
